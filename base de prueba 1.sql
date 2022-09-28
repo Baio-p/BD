@@ -9,9 +9,9 @@ CREATE TABLE dept(
 deptno NUMERIC(2) PRIMARY KEY,
 dname VARCHAR(12) UNIQUE,
 loc VARCHAR(11) NOT NULL);
-/*DESCRIBE dept;*/
+DESCRIBE dept;
 /*dept es el nombre de la tabla y despues describimos cada una de las columnas 
-asignando un nombre al dato, dominio, su tamaño y su atributo; para que se inserten en las filas */
+asignando un nombre al dato, dominio, su tamaño y su atributo para la insercion en las filas */
 INSERT INTO dept (deptno, dname,loc)
 VALUES(10,'ACCOUNTING','NEW_YORK');
 INSERT INTO dept(deptno, dname,loc) 
@@ -45,10 +45,10 @@ comm NUMERIC(7,2),
 deptno NUMERIC(2),
 -- Restricción en emp_deptno_dept_deptno_fk llave foranea de la tabla dept
 CONSTRAINT emp_deptno_dept_deptno_fk FOREIGN KEY (deptno) REFERENCES dept (deptno),
--- Restrcción en emp_mgr_fk llave forania de la tabla emp 
+-- Restrcción en emp_mgr_fk llave forania de la tabla emp
 CONSTRAINT emp_mgr_fk FOREIGN KEY (mgr) REFERENCES emp (empno));
-/*se crea una nueva tabla pero con las restriciones y especificaciones con CONSTRAINT, 
-definiendo las atributo y referencias*/
+/*se crea una nueva tabla pero con las restriciones y especificaciones con CONSTRAINT. Primero definimios de que tabla y de cual columna (T_C_) tomamos el dato, despues definimos a que tabla y 
+cual columna pondremos el dato foraneo seguido de la primer especificacion (T_C). Completo seria: "T_C_T_C".FOREIGN KEY lo define como dato foraneo en la tabla y REFERENCES nos dice de donde se esta tomando el datoforaneo*/
 INSERT INTO emp
 VALUES(7839, 'KING', 'PRESIDENT', NULL, '2011-11-17', 5000, NULL, 10);
 INSERT INTO emp
@@ -96,8 +96,6 @@ INSERT INTO salgrade
 VALUES(4,2001,3000);
 INSERT INTO salgrade
 VALUES(5,3001,9999);
-SELECT *
-FROM salgrade;
 SELECT *
 FROM salgrade
 WHERE losal > 1400
