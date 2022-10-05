@@ -1,3 +1,15 @@
+/*
+https://www.db-fiddle.com/f/pMAmiRwivBrhERRbVePftE/0
+*/
+/* 
+Base de Datos
+Practica 6.- Creacion de una Base de Datos
+Benjamin Angulo Correa
+6016RN066
+05-10-2022 
+*/
+
+
 /* Eliminamos la base de datos si existe para poder ejecutar todo el script desde el principio con los cambios aplicados */
 DROP DATABASE IF EXISTS Tienda_de_informatica;
 /*creamos la base de datos*/
@@ -66,10 +78,3 @@ INSERT INTO Productos
 VALUES (NULL,"impresora HP Deskjet 3720",59.99,3);
 INSERT INTO Productos
 VALUES (NULL,"impresora HP Laserjet Pro M26nw",180,3);
-select *
-from productos;
-select *
-from fabricantes;
-select nombre
-from fabricantes
-where codigo=6;
