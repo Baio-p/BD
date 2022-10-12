@@ -20,6 +20,8 @@ USE Tienda_de_informatica;
 CREATE TABLE fabricantes (
 codigo INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 nombre VARCHAR (100) NOT NULL UNIQUE);
+DESCRIBE fabricantes;
+DESCRIBE productos;
 CREATE TABLE Productos (
 codigo INT PRIMARY KEY NOT NULL UNIQUE AUTO_INCREMENT,
 nombre VARCHAR (100) NOT NULL UNIQUE,
@@ -78,3 +80,47 @@ INSERT INTO Productos
 VALUES (NULL,"impresora HP Deskjet 3720",59.99,3);
 INSERT INTO Productos
 VALUES (NULL,"impresora HP Laserjet Pro M26nw",180,3);
+
+/*ejercicios de consultas*/
+
+/*
+1
+Calcula el número total de productos que hay en la tabla productos.
+*/
+select count(codigo) as numero_de_productos
+from productos;
+/*
+2
+Muestra el número total de productos que tiene cada uno de los fabricantes. 
+El listado también debe incluir los fabricantes que no tienen ningún producto. 
+El resultado mostrará dos columnas, una con el nombre del fabricante y otra con el número de productos que tiene. 
+Ordene el resultado descendentemente por el número deproductos.
+*/
+select fabricantes.nombre as fabricante, count(productos.codigo) as numero_de_productos
+from fabricantes left join productos
+on productos.fabricantes_codigo = fabricantes.codigo
+group by fabricantes.codigo;
+/*
+3
+Muestra el precio máximo, precio mínimo y precio promedio de los productos de cada uno de los fabricantes.
+El resultado mostrará el nombre del fabricante junto con los datos que se solicitan.
+*/
+select *
+from productos join fabricantes
+on productos.fabricantes_codigo = fabricantes.codigo
+group by productos.codigo;
+select fabricantes.nombre as nombre, max(precio) as precio_maximo, min(precio) as precio_minimo, avg(precio) as promedio
+from productos left join fabricantes
+on productos.fabricantes_codigo = fabricantes.codigo
+group by fabricantes.codigo;
+/*
+4
+Muestra el nombre de cada fabricante, junto con el precio máximo, 
+precio mínimo,precio medio y el número total de productos de los fabricantes que tienen un precio medio superior a $200. 
+Es necesario mostrar el nombre del fabricante.
+*/
+select fabricantes.nombre as nombre, max(precio) as precio_maximo, min(precio) as precio_minimo, count(productos.codigo)
+from productos left join fabricantes
+on productos.fabricantes_codigo = fabricantes.codigo
+where productos.precio>200
+group by fabricantes.codigo;
