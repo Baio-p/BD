@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS dept_emp;
 CREATE DATABASE dept_emp;
 USE dept_emp;
 CREATE TABLE dept(
