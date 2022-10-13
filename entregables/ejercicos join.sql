@@ -1,3 +1,7 @@
+
+
+
+
 /*ejercicios de consultas con join*/
 select *
 from productos join fabricantes
@@ -19,8 +23,8 @@ Ordene el resultado descendentemente por el número deproductos.
 select fabricantes.nombre as fabricante, count(productos.codigo) as numero_de_productos
 from fabricantes left join productos
 on productos.fabricantes_codigo = fabricantes.codigo
-group by fabricantes.codigo;
-/* aqui me falto agruparlos por orden descendente. No supe como hacerle*/
+group by fabricantes.codigo
+order by 2 desc;
 /*
 3
 Muestra el precio máximo, precio mínimo y precio promedio de los productos de cada uno de los fabricantes.
@@ -36,7 +40,7 @@ Muestra el nombre de cada fabricante, junto con el precio máximo,
 precio mínimo,precio medio y el número total de productos de los fabricantes que tienen un precio medio superior a $200. 
 Es necesario mostrar el nombre del fabricante.
 */
-select fabricantes.nombre as nombre, max(precio) as precio_maximo, min(precio) as precio_minimo, count(productos.codigo), avg(precio) as media_de_precio
+select fabricantes.nombre as nombre, max(precio) as precio_maximo, min(precio) as precio_minimo, count(productos.codigo) as total_de_productos, avg(precio) as media_de_precio
 from productos left join fabricantes
 on productos.fabricantes_codigo = fabricantes.codigo
 where productos.precio>200

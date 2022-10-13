@@ -52,3 +52,6 @@ from productos
 where precio = (
 	select max(precio) from productos where fabricantes_codigo = (
 		select fabricantes.codigo from fabricantes where fabricantes.nombre = "Lenovo"));
+        
+        select * from productos;
+        select * from fabricantes;
