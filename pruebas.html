@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tacos Rocket</title>
+</head>
+<body>
+    <header>
+        <h1>Tacos Rocket🚀</h1>
+        <h2>Bienevenido a una experiencia fuera de este planeta...</h2>
+    </header>
+    <img src="./Galaxy Tacos.png" alt="">
+
+    <section>
+    <h2>Menu</h2>
+    <h3>Tacos Jumbo</h3>
+    <p>con frijoles, aguacate y verdura</p>
+    <ul>
+        <li>Asada..................................$50.00</li>
+        <li>Adobada................................$50.00</li>
+        <li>Cabeza.................................$50.00</li>
+        <li>Tripa..................................$50.00</li>
+        <li>Chorizo................................$50.00</li>
+        <li>Campechano.............................$50.00</li>
+
+    </ul>
+    <br>
+    <h3>Tacos Mini</h3>
+    <p>con aguacate y verdura</p>
+    <ul>
+        <li>Asada..................................$25.00</li>
+        <li>Adobada................................$25.00</li>
+        <li>Cabeza.................................$25.00</li>
+        <li>Tripa..................................$25.00</li>
+        <li>Chorizo................................$25.00</li>
+        <li>Campechano.............................$25.00</li>
+
+    </ul>
+
+    <h3>Tacos Espaciales🪐</h3>
+    <p>haz tu combo con refresco por $10.00 +</p>
+    <dl>
+        <dt><b>Rocket</b>.................................$75.00</dt>
+        <dd>- Tortilla de Harina con queso, camaron y chile morron</dd>
+        <dt><b>Galaxy</b>.................................$75.00</dt>
+        <dd>- Tortilla de Harina con queso, peperoni, pastor y piña</dd>
+        <dt><b>Nebulosa</b>...............................$75.00</dt>
+        <dd>- Tortilla de Harina con queso, aleta de tiburon y chicharron prensado</dd>
+    </dl>
+</section>
+
+    <hr>
+
+    <section>
+    <h2>Ubicacion</h2>
+    <h3>Sucursales</h3>
+    <table>
+        <tr>
+            <th>Sucursal</th>
+            <th>Direccion</th>
+            <th>Horario</th>
+        </tr>
+        <tr>
+            <td>El Sauzal</td>
+            <td><a href="https://goo.gl/maps/aXoDFSFhtpsnsvdu7" target="_blank">Av. Transpeninular # 450</a></td>
+            <td>6pm - 3 am (cerramos los lunes)</td>
+        </tr>
+        <tr>
+            <td>Maneadero</td>
+            <td> <a href="https://goo.gl/maps/PU4XcN6VyDcA6EBn9" target="_blank">Av. las Flores # 340</a></td>
+            <td>6pm - 3 am (cerramos los martes)</td>
+        </tr>
+        <tr>
+            <td>Zona Centro</td>
+            <td> <a href="https://goo.gl/maps/gKAkU5s1FeRsuxLn8" target="_blank">Blvd Costero #1023</a></td>
+            <td>6pm - 6 am (abrimos todos los dias)</td>
+        </tr>
+        </table>
+
+    </section>
+
+        <hr>
+
+        <section>
+
+        <h2>Pedidos</h2>
+        <h3>Haz tu pedido aqui 👇</h3>
+        <form action="">
+            <p>De que taqueria Quieres?</p>
+            <select name="sucursales" id="sucursales">
+                <option value="El sauzal">Sauzal</option>
+                <option value="Maneadero">Maneadero</option>
+                <option value="Zona Centro">Zona Centro</option>
+            </select>
+            <p>De que tacos quieres?</p>
+            <input type="checkbox" id="Asada" name="Asada" value="Asada">
+            <label for="Asada">Asada</label>
+            <input type="number" id="Asada" name="Asada" placeholder="Cuantos?">
+            <br>
+            <input type="checkbox" id="Adobada" name="Adobada" value="Adobada">
+            <label for="Adobada">Adobada</label>
+            <input type="number" id="Adobada" name="Adobada" placeholder="Cuantos?">
+            <br>
+            <input type="checkbox" id="Cabeza" name="Cabeza" value="Cabeza">
+            <label for="Cabeza">Cabeza</label>
+            <input type="number" id="Cabeza" name="Cabeza" placeholder="Cuantos?">
+            <br>
+            <input type="checkbox" id="Tripa" name="Tripa" value="Tripa">
+            <label for="Tripa">Tripa</label>
+            <input type="number" id="Tripa" name="Tripa" placeholder="Cuantos?">
+            <br>
+            <input type="checkbox" id="Chorizo" name="Chorizo" value="Chorizo">
+            <label for="Chorizo">Chorizo</label>
+            <input type="number" id="Chorizo" name="Chorizo" placeholder="Cuantos?">
+            <br>
+            <input type="checkbox" id="Campechano" name="Campechano" value="Campechano">
+            <label for="Campechano">Campechano</label>
+            <input type="number" id="Campechano" name="Campechano" placeholder="Cuantos?">
+
+            <br><br>
+
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre"  placeholder="como te llamas" maxlength="15">
+            <br><br>
+            <label for="telefono">Telefono</label>
+            <input type="tel" id="telefono" name="telefono"  placeholder="cual es tu telefono?" maxlength="10">
+            <br><br>
+            <label for="direccion">Direccion</label>
+            <input type="text" id="direccion" name="direccion"  placeholder="a donde lo mandamos?">
+            <br><br>
+            <button type="submit">Enviar pedido</button>
+            <button type="reset">Borrar pedido</button>
+           
+        </form>
+    </section>
+
+</body>
+</html>

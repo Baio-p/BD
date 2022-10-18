@@ -49,7 +49,8 @@ CREATE TABLE IF NOT EXISTS piezas (
 cuando la relacion es N:M, se crea una tabla adicional para llevar el control de esos datos
 */
 CREATE TABLE suministros (
-  fecha DATE PRIMARY KEY NOT NULL,
+  id_factura INT PRIMARY KEY AUTO_INCREMENT,
+  fecha DATE NOT NULL,
   proveedores_codigo INT NOT NULL,
   piezas_codigo INT NOT NULL,
   cantidad INT NOT NULL,
